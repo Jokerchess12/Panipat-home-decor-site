@@ -1,0 +1,824 @@
+/* Language and Location Dropdown Styling */
+.navbar-language-location {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background-color: #ff0073;
+    color: white;
+    padding: 10px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px #ff0073;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: #ff0073;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #ff0073;
+    padding: 10px 20px;
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-left,
+.navbar-center,
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-left .navbar-logo {
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+.navbar-left .dropdown {
+    position: relative;
+}
+
+.navbar-left .dropbtn {
+    background-color: #ff0073;
+    color: white;
+    padding: 10px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.navbar-left .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.navbar-left .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.navbar-left .dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.navbar-left .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Search Bar */
+.navbar-center {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar-center input[type="text"] {
+    width: 60%;
+    padding: 10px;
+    border-radius: 4px;
+    border: none;
+    font-size: 16px;
+}
+
+.navbar-center .search-button {
+    padding: 10px 20px;
+    background-color: #febd69;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.navbar-center .search-button:hover {
+    background-color: #f3a847;
+}
+
+/* Right Side of Navbar */
+.navbar-right a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+.navbar-right a:hover {
+    text-decoration: underline;
+}
+
+/* Main Section */
+.main-section {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.main-section h1 {
+    font-size: 36px;
+    color: #ff0073;
+}
+
+
+
+
+
+
+/* Hover effect */
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.dashboard-container {
+    max-width: 800px;
+    margin: 30px auto;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input[type="text"], input[type="number"], textarea {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="file"] {
+    padding: 5px;
+    font-size: 1rem;
+}
+
+button {
+    padding: 10px;
+    font-size: 1rem;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+#product-list {
+    margin-top: 20px;
+}
+
+.product-item {
+    background: #f9f9f9;
+    padding: 15px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.product-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Make body a flex container */
+}
+
+/* Main content should take up available space */
+.main-section {
+    flex-grow: 1; /* This makes the main section grow and take available space */
+}
+
+/* Footer styling */
+footer {
+    background-color: #ff0073;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}
+
+
+.prev {
+    left: 10px; /* Position left button */
+}
+
+.next {
+    right: 10px; /* Position right button */
+}
+
+.product-page-container {
+    display: flex;
+    margin: 20px;
+    gap: 30px;
+}
+
+/* Thumbnail Section */
+.product-thumbnails {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.thumbnail {
+    width: 100px;
+    cursor: pointer;
+}
+
+/* Main Product Section */
+.product-main {
+    flex-grow: 1;
+}
+
+.main-image-container {
+    position: relative;
+    width: 500px;
+    height: 500px;
+}
+
+.main-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Color Options */
+.color-options {
+    margin-top: 10px;
+}
+
+.color-option {
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+.color-option:hover {
+    background-color: #ddd;
+}
+
+/* Zoom Result */
+.img-zoom-result {
+    border: 1px solid #d4d4d4;
+    width: 400px;
+    height: 400px;
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+h3{
+     
+    color: #ff0073;
+    text-align: center;
+    
+}
+
+
+/* General Grid Layout for Products */
+.custom-product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Each product item */
+.custom-product-item {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    display: flex; /* Flexbox to arrange content */
+    flex-direction: column; /* Stack items vertically */
+    justify-content: flex-end; /* Align items at the bottom */
+    align-items: center; /* Center image and button horizontally */
+    text-align: center; /* Center text */
+    height: 400px; /* Set a fixed height for uniformity */
+}
+
+/* Product Images */
+.custom-product-item img {
+    width: 100%; /* Ensures images fit within the container */
+    height: auto;
+    max-width: 250px; /* Standard width */
+    max-height: 250px; /* Standard height for better appearance */
+    object-fit: cover; /* Ensure images are properly fitted */
+}
+
+/* Shop More Button */
+.custom-product-item a {
+    margin-top: 10px;
+    padding: 10px 20px;
+    text-decoration: none;
+    background-color: #FFD700; /* Yellow color */
+    color: #000; /* Black text */
+    font-weight: bold;
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth transition */
+    text-align: center;
+    width: 100%; /* Full width of the button */
+    display: block; /* Make the button a block element to occupy full width */
+}
+
+/* Hover effect on button */
+.custom-product-item a:hover {
+    background-color: #f0c000; /* Darker yellow on hover */
+}
+
+/* Hover effect on product item */
+.custom-product-item:hover {
+    transform: scale(1.05); /* Slightly enlarges on hover */
+}
+h2{
+    text-align: center;
+    color: red;
+    
+}
+
+.best-seller {
+    margin: 20px 0; /* Space around the Best Seller section */
+}
+
+.best-seller-grid {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    justify-content: flex-start; /* Align items to the left */
+}
+
+.best-seller-item {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: center;
+    height: 450px; /* Set a fixed height for uniformity */
+    margin: 10px; /* Space between items */
+    position: relative; /* Set position for the tag */
+}
+
+.best-seller-tag {
+    background-color: red; /* Red background for the tag */
+    color: #fff; /* White text for better contrast */
+    padding: 5px 10px; /* Padding around the text */
+    border-radius: 3px; /* Rounded corners */
+    display: inline-block; /* Make it inline */
+    margin-bottom: 10px; /* Space between the tag and product title */
+    font-weight: bold; /* Make the text bold */
+}
+
+.shop-more {
+    background-color: #FFD700; /* Yellow background for the button */
+    color: #000; /* Black text */
+    padding: 10px 20px; /* Padding for the button */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Make the text bold */
+    margin-top: 10px; /* Space between the image and the button */
+}
+
+a {
+    color: white;
+    text-decoration: none;      /* Remove underline */
+    padding: 10px 15px;        /* Add padding */
+    border-radius: 5px;        /* Rounded corners */
+   
+}
+
+.navbar-language-location .dropdown-content {
+   
+    opacity: 1;  /* Remove any transparency */
+    filter: none;  /* Ensure no blur or filter is applied */
+    z-index: 1000;  /* Ensure the dropdown appears on top */
+}
+
+.navbar-language-location .dropdown-content a {
+    color: black  /* Ensure text is readable */
+}
+
+/* Add your regular styles here */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Styles for hidden admin dashboard */
+#admin-dashboard {
+    background-color: #f1f1f1;
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin-top: 20px;
+}
+.products-slider {
+    max-width: 1200px; /* Adjust width as needed */
+    margin: auto;
+    padding: 20px;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    white-space: nowrap; /* Prevent line breaks */
+}
+
+.products {
+    display: inline-flex; /* Use inline-flex for horizontal alignment */
+    gap: 20px; /* Space between items */
+    height: 400;
+}
+
+
+
+
+
+.shop-more {
+    display: inline-block;
+    margin-top: 10px; /* Space between image and button */
+    padding: 10px 20px; /* Button padding */
+    background-color: #ffcc00; /* Yellow background */
+    color: white; /* Text color */
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s; /* Transition effect */
+}
+
+.shop-more:hover {
+    background-color: #ff9900; /* Darker yellow on hover */
+}
+.product-item{
+    width: 400;
+}
+.products-slider h2{
+    text-align: center;
+}
+/* styles.css */
+/* styles.css */
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 20px;
+}
+
+.faq-section {
+    max-width: 600px;
+    margin: auto;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.faq-item {
+    margin-bottom: 10px;
+}
+
+.faq-question {
+    background: none;
+    border: none;
+    color: #ff0073; /* Your theme color */
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px;
+    outline: none; /* Remove outline */
+}
+
+.faq-answer {
+    padding: 10px;
+    border-top: 1px solid #eee;
+}
+
+.marquee {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+.marquee-text {
+    display: inline-block;
+    padding-left: 100%; /* Start from outside */
+    animation: marquee 10s linear infinite; /* Adjust duration as needed */
+}
+@keyframes marquee {
+    0% { transform: translate(0); }
+    100% { transform: translate(-100%); }
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Each product item */
+.product-item {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column; /* Stacks items vertically */
+    justify-content: space-between; /* Ensures image and button are spaced properly */
+    align-items: center; /* Center image and button horizontally */
+    height: 100%; /* Full height of the grid cell */
+    transition: transform 0.3s ease; /* Add a little hover effect */
+}
+
+/* Product Images */
+.product-item img {
+    width: 100%; /* Ensures images fit within the container */
+    height: auto;
+    max-width: 350px; /* Standard width */
+    max-height: 400px; /* Standard height */
+    object-fit: cover; /* Ensure images are properly fitted */
+}
+
+/* Shop More Button */
+.product-item a {
+    margin-top: 10px;
+    padding: 10px 20px;
+    text-decoration: none;
+    background-color: #FFD700; /* Yellow color */
+    color: #000; /* Black text */
+    font-weight: bold;
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth transition */
+    text-align: center;
+    width: 100%; /* Full width of the button */
+    display: block; /* Make the button a block element to occupy full width */
+}
+
+/* Hover effect on button */
+.product-item a:hover {
+    background-color: #f0c000; /* Darker yellow on hover */
+}
+
+/* Hover effect on product item */
+.product-item:hover {
+    transform: scale(1.05); /* Slightly enlarges on hover */
+}
+.product {
+    cursor: pointer;
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin: 10px;
+    display: inline-block;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+.product {
+    cursor: pointer;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.product:hover {
+    background-color: #f0f0f0;
+}
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0, 0, 0, 0.7); 
+    overflow: hidden; /* Prevent scrolling of the modal background */
+}
+
+.modal-content {
+    background-color: #ffffff;
+    margin: 10% auto; 
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 90%; 
+    max-width: 500px; 
+    max-height: 80vh; /* Limit height for scrolling */
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.modal-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-title {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.modal-price {
+    font-size: 18px;
+    color: #555;
+    margin: 10px 0;
+}
+
+.add-to-cart {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-to-cart:hover {
+    background-color: #218838;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.shop-more {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: yellow; /* Added semicolon */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.faq-section {
+    padding: 20px;
+}
+
+.faq-item {
+    margin: 10px 0;
+}
+
+
+
+.custom-product-grid {
+    display: flex;              /* Use flexbox layout */
+    flex-wrap: wrap;           /* Allow items to wrap to the next line if needed */
+    justify-content: space-between; /* Distribute space between items */
+    gap: 20px;                 /* Optional: add space between items */
+    margin: 20px 0;            /* Add some vertical spacing */
+}
+
+.custom-product-item {
+    flex: 1 1 calc(20% - 20px); /* Each item takes 20% of the container width minus the gap */
+    box-sizing: border-box;     /* Include padding and border in the element's total width */
+    text-align: center;         /* Center text */
+    background-color: #f9f9f9;  /* Optional: background color for better visibility */
+    padding: 10px;              /* Optional: padding inside each item */
+    border: 1px solid #ddd;     /* Optional: border for items */
+    border-radius: 5px;         /* Optional: rounded corners */
+}
+
+.custom-product-item img {
+    max-width: 100%;           /* Ensure images are responsive */
+    height: auto;              /* Maintain aspect ratio */
+    margin-bottom: 10px;       /* Space between image and text */
+}
+h4{
+    text-align: center;
+    color: blue;
+    
+    
+}
+/*    Media Query  */
+
+    @media only screen and (max-width: 900px) {
+     .navbar {
+                 /* Maintain horizontal layout */
+        flex-wrap: wrap  
+     }
+        .navbar-center{
+            order: 7;
+            margin: 15px 0 5px;
+            min-width: 300px;
+        }
+    
+    
+    }
+    @media only screen and (max-width : 600px)
+{  .navbar-language-location{
+    display: none;
+}
+  .nav-right{
+    margin-top: -20px !important; /* Use this as a last option */
+  }
+
+}
+   

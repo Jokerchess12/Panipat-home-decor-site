@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panipat Home Decor</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div id="results" style="margin-top: 20px;"></div>
+    
+
+
+
+    <div id="welcome-message"></div>
+
+    <!-- Admin Dashboard (Hidden by default) -->
+    <section id="admin-dashboard" style="display: none; background-color: #f1f1f1; padding: 20px;">
+        <h2>Admin Dashboard</h2>
+        <p>Manage products, orders, etc.</p>
+    </section>
+    
+    <!-- Logout Section (Hidden by default) -->
+    <section id="logout-section" style="display: none;">
+        <button onclick="logout()">Logout</button>
+    </section>
+ 
+
+
+
+    <!-- Amazon-style Navigation Bar -->
+    <header>
+        <nav class="navbar">
+            <div class="navbar-left">
+                <a href="#" class="navbar-logo" id="site-title">Panipat Home Decor Enterprises</a>
+                <a href="index.html">Home</a>
+                <div class="dropdown">
+                    <button class="dropbtn">Categories</button>
+                    <div class="dropdown-content">
+                        <a href="#" id="living-room">Sofa Cover</a>
+                        <a href="bedsheet.html" id="bedroom">Bedroom</a>
+                        <a href="#" id="kitchen">Kitchen</a>
+                        <a href="#" id="bathroom">Bathroom</a>
+                        <a href="#" id="toys">Children Items</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Language and Location Options -->
+            <div class="navbar-language-location">
+                <div class="dropdown">
+                    <button class="dropbtn">🌐 Language</button>
+                    <div class="dropdown-content">
+                        <a href="#" onclick="changeLanguage('en')">English</a>
+                        <a href="#" onclick="changeLanguage('hi')">हिन्दी (Hindi)</a>
+                        <a href="#" onclick="changeLanguage('mr')">मराठी (Marathi)</a>
+                        <a href="#" onclick="changeLanguage('pa')">ਪੰਜਾਬੀ (Punjabi)</a>
+                        <a href="#" onclick="changeLanguage('gu')">ગુજરાતી (Gujarati)</a>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    
+                    
+                </div>
+            </div>
+
+            <div class="navbar-center">
+                <input type="text" placeholder="Search for products..." id="search">
+                <button class="search-button" id="search-button">Search</button>
+            </div>
+            
+
+            <div class="navbar-right">
+                <a href="acccount.html" id="my-account">My Account</a>
+                <a href="order.html" id="orders">Orders</a>
+                <a href="cart.html" id="cart">Cart</a>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home" class="main-section">
+        <h1 id="welcome">Welcome to Panipat Home Decor Enterprises!</h1>
+        <p id="tagline">Your one-stop destination for all home decor needs!</p>
+    </section>
+
+    <div class="slider">
+        <div class="slides">
+            <div class="slide fade">
+                <img src="im.png" alt="Image 1" width="1500" height="350">
+            </div>
+            <div class="slide fade">
+                <img src="Your paragraph text.png" alt="Image 2" width="1500" height="350">
+            </div>
+            <div class="slide fade">
+                <img src="sofa Cover.png" alt="Image 3" width="1500" height="350">
+            </div>
+        </div>
+        <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
+        <button class="next" onclick="plusSlides(1)">&#10095;</button>
+        <h2>Shop By Categories</h2>
+        
+        <div class="custom-product-grid">
+           
+            <div class="custom-product-item">
+                <h3>For a Choice of Bedroom.</h3>
+                <img src="./IMG-20190610-WA0341.jpg" alt="Product 1">
+                <a href="bedsheet.html">Shop More</a>
+            </div>
+            <div class="custom-product-item">
+                <h3>A Step Towards Fitness.</h3>
+                <img src="mat.jpeg" alt="Product 2">
+                <a href="bedsheet.html">Shop More</a>
+            </div>
+            <div class="custom-product-item">
+                <h3>Store Your Items.</h3>
+                <img src="storage.jpg" alt="Product 3">
+                <a href="#">Shop More</a>
+            </div>
+            <div class="custom-product-item">
+                <h3>Helps the Children to Learn.</h3>
+                <img src="kid.jpg" alt="Product 4">
+                <a href="#">Shop More</a>
+            </div>
+            <div class="custom-product-item"> <!-- Corrected from custom-product-tem to custom-product-item -->
+                <h3>Best In Use.</h3>
+                <img src="good.jpg" alt="Product 5">
+                <a href="bedsheet.html">Shop More</a>
+            </div>
+        </div>
+       
+            <div class="best-seller">
+                <h2><b>Best Seller Products</b></h2>
+                <div class="best-seller-grid">
+                    <div class="best-seller-item">
+                        <span class="best-seller-tag">Best Seller</span> <!-- Best Seller Tag -->
+                        <img src="IMG-20190730-WA0251.jpg" alt="Best Seller Product" width="350" height="400">
+                        
+                        
+                        <a href="cart.html" onclick="addToCart(1, 'Product 1', 500)" class="shop-more">Add To Cart</a>
+                    </div>
+                    <div class="best-seller-item">
+                        <span class="best-seller-tag">Best Seller</span> <!-- Best Seller Tag -->
+                        <img src="WhatsApp Image 2020-12-24 at 2.54.06 PM.jpeg" alt="Best Seller Product" width="350" height="400">
+                        <a href="" onclick="addToCart(1, 'Product 2', 600)" class="shop-more">Add To Cart</a>
+                    </div>
+                    <!-- You can add more best-seller items here following the same structure -->
+                    <div class="best-seller-item">
+                        <span class="best-seller-tag">Best Seller</span> <!-- Best Seller Tag -->
+                        <img src="best.jpg" alt="Best Seller Product" width="350" height="400">
+                        <a href="#" class="shop-more">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+            <div id="results"></div> 
+            
+            <div class="products-slider">
+                <h2> Check Out More Products!</h2>
+                <div class="products">
+                    <div class="product-item">
+                        <img src="IMG-20190610-WA0341.jpg" alt="Product 1">
+                        <a href="#" class="shop-more">Add to Cart</a>
+                    </div>
+                    <div class="product-item">
+                        <img src="IMG-20190610-WA0351.jpg" alt="Product 2">
+                        <a href="#" class="shop-more">Add to Cart</a>
+                    </div>
+                    <div class="product-item">
+                        <img src="10.jpg" alt="Product 3">
+                        <a href="#" class="shop-more">Add to Cart</a>
+                    </div>
+                    <div class="product-item">
+                        <img src="IMG-20190611-WA0516.jpg" alt="Product 4">
+                        <a href="#" class="shop-more">Add to Cart</a>
+                    </div>
+                    <div class="product-item">
+                        <img src="IMG-20190730-WA0251.jpg" alt="Product 5">
+                        <a href="#" class="shop-more">Add to Cart</a>
+                    </div>
+                    <div class="product-item">
+                        <img src="IMG-20191004-WA0118.jpg" alt="Product 6">
+                        <a href="#" class="shop-more">Add to Cart</a>
+                    </div>
+                    <div class="product-item">
+                        <img src="IMG-20191004-WA0117.jpg" alt="Product 7">
+                        <a href="#" class="shop-more">Add to Cart</a>
+                    </div>
+                    <div class="product-item">
+                        <img src="IMG-20191004-WA0119.jpg" alt="Product 8">
+                        <a href="#" class="shop-more">Add to Cart</a>
+                    </div>
+                    <div class="product-item">
+                        <img src="IMG-20191212-WA0165.jpg" alt="Product 9">
+                        <a href="#" class="shop-more">Add to Cart</a>
+                    </div>
+                    <div class="product-item">
+                        <img src="IMG-20200317-WA0102.jpg" alt="Product 10">
+                        <a href="#" class="shop-more">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+            <h2>FAQ</h2>
+            <div class="faq-section">
+                <h2>Frequently Asked Questions</h2>
+                
+                <details class="faq-item">
+                    <summary class="faq-question">What is your return policy?</summary>
+                    <p class="faq-answer">Our Return Policy allow return only in condition of wrong product. You Can Complain At 7206206902.</p>
+                </details>
+        
+                <details class="faq-item">
+                    <summary class="faq-question">How do I track my order?</summary>
+                    <p class="faq-answer">You can track your order using the Orders Options in our navigation bar.</p>
+                </details>
+        
+                <details class="faq-item">
+                    <summary class="faq-question">Is Cash on Delievery Available?</summary>
+                    <p class="faq-answer">No, Cash On Delievery is not available. But, we have a proper tracking system with full of security!.</p>
+                </details>
+                <details class="faq-item">
+                    <summary class="faq-question">From since Panipat Home Decor Enterprises Is Working?</summary>
+                    <p class="faq-answer"> Panipat Home Decor Enterprises is working since 2018 with more than 1000 customers.</p>
+                </details>
+                <details class="faq-item">
+                    <summary class="faq-question">What is the Delievery Fees?</summary>
+                    <p class="faq-answer">We have free Delievery all over India!</p>
+                </details>
+                <details class="faq-item">
+                    <summary class="faq-question">Do Panipat Home Decor Enterprises Deliever In Villages?</summary>
+                    <p class="faq-answer">Yes, Panipat Home Decor Enterprises Deliever In All Villages.</p>
+                </details>
+               
+            
+                
+            </div>
+            <h2>Have An Query? </h2>
+            <h4>Feel Free to Ask!<h4>
+                <button onclick="location.href='query.html'">Ask a Query.</button>
+
+       
+   
+
+    
+
+    <footer>
+        <p id="footer-text">&copy; 2024 Panipat Home Decor. All rights reserved.
+            <a href="contactus.html">Contact Us</a> <a href="query.html">Query</a>
+            </p>
+        
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .account-container {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            text-align: center;
+            width: 400px;
+            max-width: 100%;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 28px;
+            font-weight: 600;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .tab {
+            margin: 0 20px;
+            cursor: pointer;
+            padding: 10px 0;
+            font-size: 18px;
+            color: #666;
+            transition: color 0.3s;
+        }
+
+        .tab.active {
+            color: #ff69b4;
+            font-weight: bold;
+            border-bottom: 2px solid #ff69b4;
+        }
+
+        .form-container {
+            display: none;
+            transition: opacity 0.3s;
+        }
+
+        .form-container.active {
+            display: block;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            margin-bottom: 15px;
+        }
+
+        .btn-login {
+            background-color: #ff69b4;
+            color: white;
+        }
+
+        .btn-login:hover {
+            background-color: #ff4081;
+        }
+
+        .btn-register {
+            background-color: #ff1493;
+            color: white;
+        }
+
+        .btn-register:hover {
+            background-color: #e01182;
+        }
+
+        .footer-link {
+            margin-top: 20px;
+            color: #999;
+            font-size: 14px;
+        }
+
+        .footer-link a {
+            color: #ff69b4;
+            text-decoration: none;
+        }
+
+        .footer-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="account-container">
+        <h1 id="welcome-message">Welcome</h1>
+
+        <div class="tabs" id="tabs-section">
+            <div class="tab active" id="register-tab" onclick="showForm('register')">Register</div>
+            <div class="tab" id="login-tab" onclick="showForm('login')">Login</div>
+        </div>
+
+        <div id="register-form" class="form-container active">
+            <div class="input-group">
+                <input type="text" id="register-username" placeholder="Enter your username" required>
+                <input type="email" id="register-email" placeholder="Enter your email" required>
+                <input type="password" id="register-password" placeholder="Create a password" required>
+            </div>
+            <button class="btn btn-register" onclick="register()">Register</button>
+        </div>
+
+        <div id="login-form" class="form-container">
+            <div class="input-group">
+                <input type="text" id="login-username" placeholder="Enter your username" required>
+                <input type="password" id="login-password" placeholder="Enter your password" required>
+            </div>
+            <button class="btn btn-login" onclick="login()">Login</button>
+        </div>
+
+        <div class="footer-link" id="logout-section" style="display: none;">
+            <button class="btn btn-register" onclick="logout()">Logout</button>
+        </div>
+
+        <div class="footer-link">
+            <p>Forgot your password? <a href="#">Click here</a></p>
+        </div>
+    </div>
+    <script>
+  function showForm(formType) {
+    // Reset active tab
+    document.getElementById('login-tab').classList.remove('active');
+    document.getElementById('register-tab').classList.remove('active');
+    document.getElementById('login-form').classList.remove('active');
+    document.getElementById('register-form').classList.remove('active');
+
+    // Show selected form and underline the active tab
+    if (formType === 'login') {
+        document.getElementById('login-tab').classList.add('active');
+        document.getElementById('login-form').classList.add('active');
+    } else {
+        document.getElementById('register-tab').classList.add('active');
+        document.getElementById('register-form').classList.add('active');
+    }
+}
+
+function register() {
+    const username = document.getElementById('register-username').value;
+    const email = document.getElementById('register-email').value;
+    const password = document.getElementById('register-password').value;
+
+    if (username && email && password) {
+        // Save username and password in localStorage
+        localStorage.setItem('username', username);
+        localStorage.setItem('password', password);
+
+        alert('Registration successful! You can now log in.');
+
+        // Switch to login tab
+        showForm('login');
+    } else {
+        alert('Please fill out all fields.');
+    }
+}
+
+function login() {
+    const username = document.getElementById('login-username').value;
+    const password = document.getElementById('login-password').value;
+
+    // Check for admin credentials
+    if (username === 'admin' && password === '12') {
+        alert('Login successful! Redirecting to dashboard...');
+        localStorage.setItem('isLoggedIn', 'true');
+        localStorage.setItem('isAdmin', 'true'); // Set admin flag
+        localStorage.setItem('username', username); // Save admin username
+        window.location.href = 'index.html'; // Redirect to the main page (index.html)
+    } else {
+        // Check for regular user credentials
+        const registeredUsername = localStorage.getItem('username');
+        const registeredPassword = localStorage.getItem('password');
+
+        if (username === registeredUsername && password === registeredPassword) {
+            alert('Login successful! Welcome back!');
+            localStorage.setItem('isLoggedIn', 'true');
+            localStorage.setItem('isAdmin', 'false'); // Set user flag
+            window.location.href = 'index.html'; // Redirect to the main page (index.html)
+        } else {
+            alert('Invalid credentials. Please try again.');
+        }
+    }
+}
+
+function logout() {
+    // Clear the login status
+    localStorage.removeItem('isLoggedIn');
+    localStorage.removeItem('isAdmin');
+    location.reload(); // Reload the page to refresh content
+}
+
+// Check if the user is logged in on page load
+window.onload = function() {
+    const isLoggedIn = localStorage.getItem('isLoggedIn');
+    const isAdmin = localStorage.getItem('isAdmin');
+    const username = localStorage.getItem('username');
+
+    if (isLoggedIn) {
+        // Display "Hello, username"
+        document.getElementById('welcome-message').textContent = `Hello, ${username}`;
+
+        // Hide login and register tabs after login
+        document.getElementById('tabs-section').style.display = 'none';
+        document.getElementById('login-form').style.display = 'none';
+        document.getElementById('register-form').style.display = 'none';
+
+        // Show logout button
+        document.getElementById('logout-section').style.display = 'block';
+
+        // If the user is admin, show the admin dashboard
+        if (isAdmin === 'true') {
+            document.getElementById('admin-dashboard').style.display = 'block';
+        }
+    }
+}
+
+
+</script>
+</body>
+</html>
